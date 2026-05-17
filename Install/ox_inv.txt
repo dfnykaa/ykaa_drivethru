@@ -1,0 +1,47 @@
+	['hamburger'] = {
+		label = 'Hamburger',
+		weight = 250,
+		client = {
+			status = { hunger = 200000 },
+			anim = { dict = 'mp_player_int_eat_pure_beefeater', clip = 'mp_player_int_eat_pure_beefeater', flag = 49 },
+			prop = { model = 'prop_cs_burger_01', pos = vec3(0.02, 0.02, -0.02), rot = vec3(0.0, 0.0, 0.0), bone = 18905 }
+		}
+	},
+
+	['cheeseburger'] = {
+		label = 'Cheeseburger',
+		weight = 250,
+		client = {
+			status = { hunger = 250000 },
+			anim = { dict = 'mp_player_int_eat_pure_beefeater', clip = 'mp_player_int_eat_pure_beefeater', flag = 49 },
+			prop = { model = 'prop_cs_burger_01', pos = vec3(0.02, 0.02, -0.02), rot = vec3(0.0, 0.0, 0.0), bone = 18905 }
+		}
+	},
+
+	['fries'] = {
+		label = 'Fries',
+		weight = 150,
+		client = {
+			status = { hunger = 150000 },
+			anim = { dict = 'mp_player_int_eat_pure_beefeater', clip = 'mp_player_int_eat_pure_beefeater', flag = 49 }
+		}
+	},
+
+	['cola'] = {
+		label = 'Coca-Cola',
+		weight = 300,
+		client = {
+			status = { thirst = 200000 },
+			anim = { dict = 'mp_player_intdrink', clip = 'mp_player_int_drink_gravity', flag = 49 },
+			prop = { model = 'prop_ld_can_01', pos = vec3(0.01, 0.01, 0.01), rot = vec3(0.0, 0.0, 0.0), bone = 18905 }
+		}
+	},
+
+	['donut'] = {
+		label = 'Donut',
+		weight = 100,
+		client = {
+			status = { hunger = 100000 },
+			anim = { dict = 'mp_player_int_eat_pure_beefeater', clip = 'mp_player_int_eat_pure_beefeater', flag = 49 }
+		}
+	}
