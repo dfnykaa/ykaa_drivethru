@@ -12,13 +12,13 @@ if fileContent then
 end
 
 local function Translate(key, ...)
-    local lang = Config.Locale or "cs"
+    local lang = Config.Locale
     local translation = Locales and Locales[lang] and Locales[lang][key] or key
     return string.format(translation, ...)
 end
 
 CreateThread(function()
-    for i, shop in ipairs(Config.Peds) do
+    for i, shop in ipairs(Config.DriveThru) do
         if shop.blip and shop.blip.enabled then
             local blip = AddBlipForCoord(shop.coords.x, shop.coords.y, shop.coords.z)
             SetBlipSprite(blip, shop.blip.sprite)
@@ -103,7 +103,7 @@ local function RemoveTargetFromPed(ped, index)
     if targetType == "ox" then
         exports.ox_target:removeLocalEntity(ped, 'ykaa_drivethru_' .. index)
     elseif targetType == "qb" then
-        local currentShop = Config.Peds[index]
+        local currentShop = Config.DriveThru[index]
         if currentShop then
             local label = Translate(currentShop.targetLabelKey or "order_target", currentShop.name)
             exports['qb-target']:RemoveTargetEntity(ped, label)
@@ -123,7 +123,7 @@ CreateThread(function()
         local playerCoords = GetEntityCoords(playerPed)
         local sleep = 1500
 
-        for i, shop in ipairs(Config.Peds) do
+        for i, shop in ipairs(Config.DriveThru) do
             local shopCoords = vector3(shop.coords.x, shop.coords.y, shop.coords.z)
             local distance = #(playerCoords - shopCoords)
 
@@ -201,7 +201,7 @@ AddEventHandler('onResourceStop', function(resourceName)
 end)
 
 OpenDriveThruMenu = function(index)
-    local shop = Config.Peds[index]
+    local shop = Config.DriveThru[index]
     if not shop then return end
 
     local options = {}
@@ -230,7 +230,7 @@ OpenDriveThruMenu = function(index)
 end
 
 SelectItemQuantity = function(shopIndex, itemIndex)
-    local shop = Config.Peds[shopIndex]
+    local shop = Config.DriveThru[shopIndex]
     local item = shop.items[itemIndex]
     local itemLabel = Translate(item.labelKey)
     
