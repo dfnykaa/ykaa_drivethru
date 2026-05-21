@@ -2,8 +2,8 @@ fx_version 'cerulean'
 game 'gta5'
 
 author 'ykaa'
-description 'Simple Drive Thru'
-version '2.0.0'
+description 'Drive Thru script for your FiveM server'
+version '2.1.0'
 
 lua54 'yes'
 
@@ -25,4 +25,10 @@ client_scripts {
 server_scripts {
     'config/webhook.lua',
     'server/server.lua'
+}
+
+dependencies {
+    'ox_lib',
+    'ox_target',
+    'ox_iventory'
 }
