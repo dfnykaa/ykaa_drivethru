@@ -1,5 +1,12 @@
 Config = {}
 
+-- ██████╗ ██████╗ ██╗██╗   ██╗███████╗████████╗██╗  ██╗██████╗ ██╗   ██╗
+-- ██╔══██╗██╔══██╗██║██║   ██║██╔════╝╚══██╔══╝██║  ██║██╔══██╗██║   ██║
+-- ██║  ██║██████╔╝██║██║   ██║█████╗     ██║   ███████║██████╔╝██║   ██║
+-- ██║  ██║██╔══██╗██║╚██╗ ██╔╝██╔══╝     ██║   ██╔══██║██╔══██╗██║   ██║
+-- ██████╔╝██║  ██║██║ ╚████╔╝ ███████╗   ██║   ██║  ██║██║  ██║╚██████╔╝
+-- ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═══╝  ╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝
+
 Config.Framework = "auto" -- Framework type: esx, qb, auto
 Config.Target = "auto" -- Target system: ox, qb, qtarget, auto
 Config.PaymentType = "both" -- Payment method: cash, bank, both
@@ -8,7 +15,7 @@ Config.Locale = "en" -- Localization language: cs, en, hu
 Config.BanCheater = true -- Ban cheaters when they try to exploit: true/false
 Config.Cooldown = 1000 -- Purchase cooldown in milliseconds (1000ms = 1s)
 
-Config.Peds = {
+Config.DriveThru = {
     {
         name = "Burgershot",
         coords = vector4(-1178.6779, -891.7973, 13.7439, 312.6534),
