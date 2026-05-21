@@ -31,7 +31,7 @@ if fileContent then
 end
 
 local function Translate(key, ...)
-    local lang = Config.Locale or "cs"
+    local lang = Config.Locale
     local translation = Locales and Locales[lang] and Locales[lang][key] or key
     return string.format(translation, ...)
 end
@@ -133,7 +133,7 @@ RegisterNetEvent('ykaa_drivethru:server:buyItem', function(shopIndex, itemIndex,
         return
     end
 
-    local shop = Config.Peds[shopIndex]
+    local shop = Config.DriveThru[shopIndex]
     if not shop then
         BanPlayer(src, Translate("invalid_shop_index", tostring(shopIndex)))
         return
@@ -273,5 +273,15 @@ RegisterNetEvent('ykaa_drivethru:server:buyItem', function(shopIndex, itemIndex,
         end
     else
         TriggerClientEvent('ykaa_drivethru:client:notify', src, Translate("error_title"), Translate("framework_error"), 'error')
+    end
+end)
+
+local resourceName = GetResourceName(GetCurrentResourceName())
+local expectedName = "ykaa_drivethru"
+AddEventHandler("onResourceStart", function(resource)
+    if resource ~= GetCurrentResourceName() then return end
+    if GetCurrentResourceName() ~= expectedName then
+        StopResource(GetCurrentResourceName())
+    else
     end
 end)
