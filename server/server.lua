@@ -107,7 +107,7 @@ local function SendToDiscord(title, description, color)
 end
 
 local function BanPlayer(source, reason)
-    local name = GetPlayerName(source) or "Neznámý hráč"
+    local name = GetPlayerName(source) or "Unknown Player"
     local license, discord, steam, ip = GetPlayerDetails(source)
 
     local alertMessage = Translate("discord_exploit_msg", name, source, reason, license, discord, steam, ip)
