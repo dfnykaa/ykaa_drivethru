@@ -8,3 +8,4 @@ https://streamable.com/kyrktu
 - ox_lib
 - ox_target /qtarget /qbtarget
 - ox_inventory
+- brain
